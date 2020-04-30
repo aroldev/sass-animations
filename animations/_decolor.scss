@@ -1,0 +1,10 @@
+.decolor-animation {
+  @include animation-base;
+  img {
+    @include base-transition;
+    filter: grayscale(0%)
+  }
+  @include hover-style {
+    img {filter: grayscale(100%)}
+  }
+}

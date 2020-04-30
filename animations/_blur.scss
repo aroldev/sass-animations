@@ -1,0 +1,10 @@
+.blur-animation {
+  @include animation-base;
+  img {
+    @include base-transition;
+    filter: blur(0px)
+  }
+  @include hover-style {
+    img {filter: blur(3px)}
+  }
+}

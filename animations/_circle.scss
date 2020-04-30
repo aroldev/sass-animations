@@ -1,0 +1,49 @@
+//a {
+//  @include circle-effect;
+//  position: relative;
+//  &:hover {
+//    &:before {animation: circle .75s;}
+//  }
+//}
+@mixin circle-effect {
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,.2);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+//Circle keyframe
+@keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+.circle-animation {
+  @include circle-effect;
+  @include animation-base;
+  //position: relative;
+  //display: block;
+  //overflow: hidden;
+  &:hover {
+    &:before {animation: circle .75s;}
+  }
+}
